@@ -1,0 +1,1328 @@
+.player h1 {
+  font-size: 1.1em;
+  padding: 0.4em 0 0.2em 0.5em; }
+
+.copytext .player h1 {
+  margin: 0; }
+  
+.projekktor {
+  outline: none;
+  font-family: Sans-Serif;
+  padding: 0;
+  z-index: 9;
+  display: none;
+  position: relative;
+  overflow: hidden;
+  text-align: center; 
+  background-color: #000; }   
+
+.projekktor.fullscreen,
+.projekktor.fullviewport {
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 99999;
+  margin: 0;
+  padding: 0;
+}
+
+
+.mediathekstage .projekktor.fullscreen {
+  position: fixed;
+  display: block;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 99999;
+  margin: 0;
+  padding: 0;
+  background-color: #000000; }
+
+.projekktor :focus {
+  outline: none; }
+
+.pptestcard {
+  background: url("./common/mediaplayer/theme/ndrtv/img/noise.gif") center center repeat; 
+  width: 100%;
+  height: 100%;
+  color: #fdfdfd;
+  font-size: 18px;
+  overflow: hidden; }
+
+.pptestcard p {
+  display: block;
+  background-color: #3b393e;
+  width: 60%;
+  margin: auto;
+  line-height: 25px;
+  position: relative;
+  top: 25%;
+  padding: 10px;
+  border: 5px solid #000;
+  text-align: center; }
+ 
+.ppcustomtestcard p {
+  display: block;
+  background-color: #3b393e;
+  width: 60%;
+  margin: auto;
+  line-height: 25px;
+  position: relative;
+  top: 25%;
+  padding: 10px;
+  border: 5px solid #000;
+  text-align: center; }
+
+#player_media_image {
+  width: 100%;
+  height: 100%;
+  display: block; }
+
+.ppdisplay {
+  position: absolute !important;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0; }
+
+.ppdisplay .inactive,
+.ppstart.inactive,
+.ppbuffering.inactive {
+  display: none; }
+
+.ppstart {
+  display: none; }
+
+.ppbuffering {
+  z-index: 8000;
+  bottom: 50%;
+  display: block;
+  height: 60px;
+  left: 50%;
+  margin-bottom: -30px;
+  margin-left: -30px;
+  padding: 0;
+  position: absolute;
+  width: 60px;
+  z-index: 8000;
+  overflow: hidden; }
+
+.pphttpAudio .ppbuffering.active, 
+.pphttpAudioLive .ppbuffering.active {
+	display: none;
+}
+
+.ppclear {
+  clear: both; }
+
+/* vgl: Ticket RN-229 - bei "Click to Play" einstellung des Flash-Plugins lies sich das Plugin nciht aktivieren Bugfix: */
+/* Korrektur zur Positionierung des embeds */
+
+embed {
+	top: 0;
+	left: 0;
+}
+
+/* Unmittelbar nach dem Embed folgt ein div, der ueber dem Flashplayer liegt und den Klick abfaengt. Bei TS ist der scriptseitig auf 1x1px verkleinert, hier per z-index nach hinten geschoben */
+
+.ppdisplay div div { z-index: -1; }
+ 
+/***************************************
+controls - general 
+***************************************/
+.ppcontrols {
+  font-family: "NDRicons";
+  background-color: #1b366f;
+  background-color: #1b366f;
+  background-color: rgba(27, 54, 111, 0.6);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#0b1b366f,endColorstr=#0D1b366f);
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  display: block;
+  width: 100%;
+  height: 2.7em;
+  padding: 0;
+  margin: 0; }
+
+.ppcontrols ul .right {
+  float: right;
+  padding: 0; }
+
+.ppcontrols li {
+  display: block;
+  float: left;
+  list-style-type: none;
+  list-style: none;
+  font-size: 1.3em; }
+
+.ppcontrols ul a {
+  font-family: "NDRicons";
+  text-decoration: none;
+  color: #b6cff8;
+  display: block;
+  line-height: 1em;
+  width: 1.4em;
+  padding: 0.1em;
+  margin: 0.3em 0.3em 0.3em 0; 
+  border: none; }
+
+.ppcontrols .icon {
+  margin-right: 0;
+  top: 0; }
+
+.ppcontrols .ppplay, .ppcontrols .pppause {
+  text-align: center;
+  background-color: #1d5596;
+  margin: 0 0 0 0.1em;
+  width: 1.3em;
+  height: 1em;
+  border-radius: 5px;
+  font-size: 1.8em;
+  padding: 0;
+  line-height: 1em; }
+
+.ppcontrols .ppplay .icon, .pppause .icon {
+  color: #fff;
+  line-height: 0.1em; 
+  top: -0.03em;
+  }
+
+.ppcontrols .inactive, .ppdisplay .inactive {
+  display: none; }
+
+.ppcontrols .active, .ppdisplay .active {
+  display: block; }
+
+.ppcontrols .active {
+  display: block; }
+
+.ppcontrols .inactive {
+  display: none; }
+  
+.projekktor.notransitions .ppcontrols.active,
+.projekktor.notransitions .ppstatepaused .ppcontrols.inactive {
+  bottom: 0; }
+
+.projekktor.notransitions .ppcontrols.inactive {
+  bottom: -2.8em; }
+
+.projekktor.notransitions.pphttpVideoLive .ppcontrols.inactive {
+  bottom: -2.8em; }
+
+.ppcontrols.active,
+.ppstatepaused .ppcontrols.inactive {
+  bottom: 0;
+  -webkit-backface-visibility: hidden;
+  -webkit-transform: translate3d(0, 0, 0);
+  -webkit-transition: bottom 0.1s linear;
+  -moz-transition: bottom 0.1s linear;
+  -o-transition: bottom 0.1s linear;
+  transition: bottom 0.1s linear; }
+
+.ppcontrols.inactive {
+  bottom: -2.8em;
+  -webkit-backface-visibility: hidden;
+  -webkit-transform: translate3d(0, 0, 0);
+  -webkit-transition: bottom 0.5s linear;
+  -moz-transition: bottom 0.5s linear;
+  -o-transition: bottom 0.5s linear;
+  transition: bottom 0.5s linear; }
+
+.fullscreen.ppcontrols.inactive {
+  bottom: -3.2em;
+  -webkit-backface-visibility: hidden;
+  -webkit-transform: translate3d(0, 0, 0);
+  -webkit-transition: bottom 0.5s linear;
+  -moz-transition: bottom 0.5s linear;
+  -o-transition: bottom 0.5s linear;
+  transition: bottom 0.5s linear; }
+
+.ppplayhead,
+.ppdvr .ppgolive.off:hover, 
+.pptool .btn:hover,
+ul.ppvolume li.active,
+ul.ppsettingslist li.on,
+.ppcontrols a:hover,
+.ppplay:focus,
+.pppause:focus,
+.ppstart:focus,
+.ppstart:hover {
+  background-color: #b6cff8;
+  color: #1d5596; }
+
+.ppcontrols a.active {
+  display: block; }
+
+.ppcontrols a.inactive {
+  display: none; }
+
+.ppcontrols a:hover {
+  color: #fdfdfd; }
+
+.ppcontrols ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0; }
+
+.ppcontrols ul.left {
+  position: relative;
+  bottom: -0.2em;
+  left: 0;
+  float: left;
+  padding: 0; }
+
+.ppcontrols ul.right {
+  position: relative;
+  bottom: -0.2em;
+  right: 0;
+  float: right; }
+  
+.ppcontrols ul.left li {
+  float: left;
+  position: relative; }
+
+.ppcontrols ul.right li {
+  float: right;
+  position: relative; }
+
+
+
+/***************************************
+volume panel
+***************************************/
+.ppvolumePanel {
+  position: absolute;
+  top: -3.7em;
+  right: 0.3em;
+  height: 70px;
+  width: 1.6em;
+  list-style: none;
+  display: block;
+  text-align: center;
+  background-color: #1b366f;
+  background-color: #1b366f;
+  background-color: rgba(27, 54, 111, 0.8);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#0b1b366f,endColorstr=#0D1b366f); }
+
+.ppstateidle .ppvolumePanel {
+  top: -3.45em;
+}
+
+ul.ppvolume {
+  background-color: #343B59;
+  background-color: #0d2654;
+  background-color: rgba(13, 38, 84, 0.9);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#0D265459,endColorstr=#0D265459);
+  zoom: 1;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 69px;
+  width: 46px;
+  list-style: none;
+  display: block; }
+
+ul.ppvolume li {
+  width: 40px;
+  height: 4px;
+  display: block;
+  background-color: #fff;
+  margin: 2px 3px 0 3px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px; }
+
+ul.ppvolume li.first {
+  margin: 5px 3px 0 3px; }
+
+.ppvslider {
+  position: absolute;
+  left: 0.6em;
+  bottom: 0px;
+  margin: auto;
+  height: 90%;
+  width: 0.3em;
+  display: block;
+  cursor: pointer;
+  z-index: 900;
+  background-color: #343B59; }
+
+.ppvknob {
+  background-color: #b6cff8;
+  border: 1px solid #343B59;
+  cursor: pointer;
+  height: 0.2em;
+  left: 0.2em;
+  margin-left: -0.4em;
+  position: absolute;
+  top: 0;
+  width: 0.6em;
+  margin-top: -0.2em;
+  z-index: 302; }
+
+.ppvmarker {
+  position: absolute;
+  width: 100%;
+  height: 0.2em;
+  background-color: #b6cff8;
+  bottom: 0;
+  left: 0; }
+
+
+
+
+/***************************************
+duration / position
+***************************************/
+.pptimeleft {
+  height: 3em;
+  line-height: 3em;
+  color: #fff;
+  font-size: 0.6em;
+  text-align: center;
+  overflow: hidden;
+  padding: 0;
+  margin-left: 2.5em; }
+
+.pphr_elp,
+.ppmin_elp,
+.ppsec_elp,
+.pphr_dur,
+.ppmin_dur,
+.ppsec_dur {
+  font-family: Sans-Serif; }
+
+
+
+
+/***************************************
+scrubber
+***************************************/
+.ppscrubber {
+  position: absolute;
+  bottom: 2.7em;
+  width: 100%;
+  height: 0.3em;
+  padding: 0;
+  margin: 0;
+  -webkit-backface-visibility: hidden;
+  -webkit-transform: translate3d(0, 0, 0);
+  -webkit-transition: height 0.1s linear;
+  -moz-transition: height 0.1s linear;
+  -o-transition: height 0.1s linear;
+  overflow: hidden;
+  transition: height 0.1s linear;  
+}
+
+.ppscrubber:hover {
+  height: 0.6em;
+  -webkit-backface-visibility: hidden;
+  -webkit-transform: translate3d(0, 0, 0);
+  -webkit-transition: height 0.1s linear;
+  -moz-transition: height 0.1s linear;
+  -o-transition: height 0.1s linear;
+  transition: height 0.1s linear;
+}
+
+
+.pploaded,
+.ppplayhead,
+.ppscrubberdrag {
+  position: absolute;
+  top: 0;
+  width: 0%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  background-color: #1d5596;
+  background-color: #1d5596;
+  background-color: rgba(29, 85, 150, 0.2);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#00000059,endColorstr=#00000059);
+  z-index: 300;
+  display: block; }
+
+.pploaded {
+  background-color: #b6cff8;
+  background-color: #b6cff8;
+  background-color: rgba(182, 207, 248, 0.2); }
+
+.ppplayhead {
+  z-index: 301;
+  background-color: #fdfdfd; }
+
+.ppscrubberdrag {
+  cursor: pointer;
+  height: 100%;
+  z-index: 302;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=1)";
+  filter: alpha(opacity=1);
+  -moz-opacity: 0.1;
+  -khtml-opacity: 0.1;
+  opacity: 0.1;
+  left: 0;
+  width: 100%; }
+
+
+
+
+/***************************************
+scrubber tooltip
+***************************************/
+.ppscrubbertip {
+  font-family: Sans-Serif;
+  padding: 3px;
+  position: absolute; 
+  bottom: 5.6em;
+  left: 25px;
+  font-size: 11px;
+  line-height: 15px;
+  color: #fff;
+  background: #021C4F;
+  z-index: 10;
+  display: none; }
+
+.ppscrubbertip:after {
+  top: 100%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none; }
+
+.ppscrubbertip:after {
+  border-color: rgba(2, 28, 79, 0);
+  border-top-color: #021C4F;
+  border-width: 5px;
+  left: 50%;
+  margin-left: -5px; }
+  
+.ppstateidle .ppscrubbertip {
+  display: none; }
+
+
+
+/***************************************
+cuepoint(s)
+***************************************/
+.ppcuepoint {
+  position: absolute;
+  height: 5px;
+  width: 5px;
+  background-color: yellow;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  z-index: 302; }
+
+.ppcuepoint:hover {
+  background-color: red;
+  cursor: pointer; }
+
+
+
+.pphttpVideoLive .ppscrubber {
+  display: none; }
+
+.pphttpVideoLive.ppsemivod .ppscrubber {
+  display: block; }
+  
+.pphttpVideoLive.ppdvr .ppscrubber {
+  display: block; }
+
+.pphttpVideoLive.ppdvr.ppsemivodlive .ppscrubber {
+  display: block; }
+
+/***************************************
+settings menu
+***************************************/
+.ppsettingsmenu {
+    position: absolute;
+    bottom: 4.9em;
+    right:0;
+    display: block;    
+    width: 280px;
+    height: 130px;
+    padding: 0;
+    /* margin: 0 0 -130px -184px; */
+    text-align: center;
+    display: block;
+    font-size: 0.6em;
+}
+
+.ppstateidle .ppsettingsmenu {
+  bottom: 4.5em;
+}
+
+.ppsettingsmenu.active {
+    display: block;
+}
+
+.ppsettingsmenu.inactive {
+    display: none;   
+}
+
+.ppsettingsmenu.column1  {
+    width: 90px;   
+}
+
+.ppsettingsmenu.column2 {
+    width: 184px;   
+}
+
+.ppsettingsmenu.column3 {
+    width: 280px;   
+}
+
+
+.ppsettingsmenu ul {
+    width: 90px;
+    overflow: hidden;
+    background-color: #1b366f;
+    background-color: #1b366f;
+    background-color: rgba(27, 54, 111, 0.8);
+    zoom:1;
+    display: inline-block;
+    margin: auto;
+    padding: 0;    
+    color: #fdfdfd;
+    list-style: none;
+    height: 100%;
+    margin: 0 0 0 1px; 
+}
+
+.ppsettingsmenu ul#tool,
+.ppsettingsmenu ul#platform,
+.ppsettingsmenu ul#quality { 
+    float: left;
+}
+
+
+
+
+
+.ppsettingslist li.first {
+    font-weight: bold;
+    text-decoration: underline;
+    cursor: auto;
+}
+
+
+.ppsettingsmenu ul li {
+    margin: 0;
+    padding: 5px 0 5px 0px;
+    width: 100%;
+    height: 15px;
+    line-height: 15px;
+    cursor: pointer;
+    border-bottom: 1px solid #1d5596;
+}
+
+.ppsettingslist.active {
+    display: block;
+}
+
+.ppsettingslist.inactive {
+    display: none;
+}
+
+ul.ppsettingslist li.inactive {
+    display: none;
+}
+
+ul.ppsettingslist li.on {
+    background: #fdfdfd;
+    color: #333;
+    opacity: 1;
+}
+
+/***************************************
+Tool
+***************************************/
+.pptool {    
+    background-color: #333;
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#0D265459,endColorstr=#0D265459);  
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: #fff;
+    padding: 0 15px;
+    font-size: 12px;
+    text-align: center;
+    max-width: 70%;
+}
+
+.pptool.inactive,
+.pptool .inactive {
+    display: none;
+}
+
+.pptool.active,
+.pptool .active {
+    display: block;
+}
+
+.pptool p {
+    line-height:1.5;    
+}
+
+.pptool .btn {
+    padding: 5px 15px;
+    margin: 2px; 
+    color: #0F1D46;
+    background-color: #faffef;
+    text-decoration: none;
+}
+
+.pptool p.key {
+    color:#eee;
+    margin:.5em 0;
+    margin: 15px;
+}
+
+.pptool em,
+.pptool .icon {
+    background:#faffef !important;
+    -webkit-border-radius:.3em;
+    -moz-border-radius:.3em;
+    border-radius:.3em;
+    margin:0 .4em;
+    padding:.3em .6em !important;
+    color:#51231E
+}
+
+.pptool textarea {
+    padding: 5px;
+    width: 240px;
+    height: 100px;
+}
+
+
+/***************************************
+Tracks Plugin
+***************************************/
+.pptracks  {
+    position: absolute;
+    bottom:4px;
+    left: 0;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    color: #fdfdfd;
+    line-height: 25px;
+    z-index: 8;
+    font-size: 24px;
+    background-color: #000000;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,.7);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#00000059,endColorstr=#00000059);
+    text-align: center;
+    -webkit-backface-visibility: hidden;
+    -webkit-transform:translate3d(0,0,0);
+    -webkit-transition: bottom 0.5s linear;
+    -moz-transition: bottom 0.5s linear;
+    -o-transition: bottom 0.5s linear;
+    transition: bottom 0.5s linear;        
+}
+
+
+.fullscreen .pptracks {
+  bottom: 0; }
+
+.pptracks.shifted,
+.ppstatepaused .pptracks {
+  bottom: 48px;
+  -webkit-backface-visibility: hidden;
+  -webkit-transform: translate3d(0, 0, 0);
+  -webkit-transition: bottom 0.1s linear;
+  -moz-transition: bottom 0.1s linear;
+  -o-transition: bottom 0.1s linear;
+  transition: bottom 0.1s linear; }
+
+.pptracksbtn.inactive,
+.pptracks.inactive {
+  display: none; }
+
+.pptracksbtn.active,
+.pptracks.active {
+  display: block; }
+
+.pptracks span {
+  position: relative; padding: 0.2em;}
+
+.pptracksbtn.on {
+  -moz-opacity: 1;
+  -ms-filter: "alpha(opacity=100)";
+  filter: alpha(opacity=100);
+  opacity: 1; }
+
+.pptracksbtn.off {
+  -moz-opacity: .70;
+  -ms-filter: "alpha(opacity=70)";
+  filter: alpha(opacity=70);
+  opacity: .70; }
+
+.pptracks p { 
+	margin: 0; // kurzfristiger Fix fuer zu grosse Abstaende im UT-Overlay
+	 }
+
+/***************************************
+Mobil Variante
+***************************************/
+.mobile a.ppsettingsbtn.active {
+  display: none; }
+
+.mobile .ppscrubbertip.active {
+  display: none; }
+
+.mobile .ppscrubberdrag {
+  height: 18px;
+  top: -10px;
+  border-bottom: 1px solid #375889; }
+
+
+/***************************************
+S / XS Variante
+***************************************/
+.player-xs a.ppsettingsbtn.active,
+.player-s .ppsettingslist#tool {
+  display: none; }
+
+.player-s .ppsettingsmenu.column3 {
+  width: 184px;
+  margin: 0 -184px 0 0;
+  left: -129px; }
+
+.player-xs .ppcontrols .right {
+  display: none; }
+
+/* Beim Livestreamplayer soll der Volumeslider sichtbar sein */
+#livestreamplayer .player-xs .ppcontrols .right { display: block; }
+/***************************************
+AUDIO On Demand Variante
+***************************************/
+
+/* richtig voll 
+.projekktor.pphttpAudio.fullviewport,
+.projekktor.pphttpAudioLive.fullviewport  {
+	height: 135px;
+}
+*/
+
+.pphttpAudio div.ppdisplay,
+.pphttpAudioLive div.ppdisplay  {
+	overflow: hidden;
+	width: 25%; }  
+	
+.pphttpAudio.notransitions .ppcontrols,
+.pphttpAudio .ppcontrols,
+.pphttpAudioLive.notransitions .ppcontrols,
+.pphttpAudioLive .ppcontrols {
+	background-color: none;
+	top: 0.6em;
+  	height: 125px; 
+  	margin-left: 25%;
+  	width: 75%;
+  	display: block; }  	
+	
+
+/* voll und halb */
+.pphttpAudio.player-l.fullviewport,
+.pphttpAudio.player-m.fullviewport,
+.pphttpAudio.player-s.fullviewport,
+.pphttpAudio.player-xs.fullviewport {
+height: 80px; }
+
+
+.pphttpAudio {
+	background-color: #1B366F; }
+	
+.module.direkt .pphttpAudio {
+	min-height: 5.5em; }
+	
+.pphttpAudio a.ppfsexit,
+.pphttpAudio a.ppfsenter,
+.pphttpAudio a.ppsettingsbtn {
+ 	display: none; }
+  
+.pphttpAudio div.ppdisplay {
+	overflow: hidden;
+	width: 25%; }  
+
+.pphttpAudio.notransitions .ppcontrols.inactive,
+.pphttpAudio .ppcontrols.inactive {
+ 	bottom: 0px;
+ 	display: block; }
+ 	
+.pphttpAudio .ppcontrols ul.left  {
+	bottom: -1em; } 	
+	
+.pphttpAudio .ppcontrols ul.left  {
+	bottom: -1em; } 	
+
+.pphttpAudio .ppcontrols ul.right  {
+	top: 1.2em; } 	
+		
+	
+
+.pphttpAudio.player-xs .pptimeleft,
+.pphttpAudio.player-s .pptimeleft   {
+	display: none; } 	
+ 	
+.pphttpAudio .pptimeleft  {
+	margin-left: 1em; } 	  
+  
+  
+.pphttpAudio.notransitions .ppcontrols,
+.pphttpAudio .ppcontrols {
+	background-color: none;
+  	top: 0.0em;
+  	height: 100%;
+  	margin-left: 25%;
+  	width: 75%;
+  	display: block; }  
+  
+.pphttpAudio .ppscrubber {
+ 	background-color: #1D5596;
+  	height: 0.5em;
+  	bottom: 0;
+}
+
+
+.pphttpAudio.ppstateidle .ppscrubber {
+ 	display: none;
+}
+
+
+.pphttpAudio .ppscrubber:hover {
+ 	height: 0.5em;
+}
+  
+.pphttpAudio .ppscrubbertip {
+ 	bottom: 1.1em;
+}
+    
+  
+.pphttpAudio .pptimeleft {
+ 	color: #FFFFFF;
+    line-height: 3.5em; 
+    }
+
+.pphttpAudio .ppbuffering {
+ 	left: 12%;
+}
+
+.pphttpAudio .ppvolumePanel.inactive {
+ 	display: block;
+}
+
+.pphttpAudio .ppvslider {
+    position: relative;
+    top: 0.7em;    
+    height: 0.3em;
+    width: 70px;
+    margin: 0px 15px 0 -15px;
+}
+
+.pphttpAudio .ppvmarker {
+    position: relative;
+    right:0;
+    left: 0;
+    height:100%;
+    width: 100%;
+}
+
+.pphttpAudio .ppvknob  {
+    cursor: pointer;
+    z-index: 201;
+    position: relative;
+    top: -0.3em;
+    left:0;
+    width: 0.3em;
+    height: 0.6em;
+    padding: 0;
+    margin-left: -0.1em;
+
+}
+
+.pphttpAudio .ppplay,
+.pphttpAudio .pppause {
+	margin: 0.1em; }
+
+.pphttpAudio .ppcontrols ul.right {
+	left: 0.1em;  }
+
+
+.pphttpAudio.player-xs .ppdisplay {
+	width: 100%; }
+	
+.pphttpAudio.player-xs .ppcontrols {
+	width: 100%;
+	background-color: transparent;
+	margin: 0px;	
+}
+
+/***************************************
+AUDIO LIVE Variante
+***************************************/
+.pphttpAudioLive {
+ 	background-color: #1b366f;
+ 	height: 4em;
+	}
+
+.pphttpAudioLive .ppdisplay {
+	display: none;
+}	
+	
+.pphttpAudioLive {
+ 	background-color: #1b366f;
+ 	height: 4em;
+ 	}
+	
+		
+.pphttpAudioLive .top {
+	display: none;
+}	
+.module.direkt .pphttpAudio {
+	min-height: 5.5em; }
+	
+.pphttpAudioLive a.ppfsexit,
+.pphttpAudioLive a.ppfsenter,
+.pphttpAudioLive a.ppsettingsbtn {
+ 	display: none; }
+  
+.oac_index .pphttpAudioLive div.ppdisplay {
+	display: none;  
+}  
+
+article, .container.w100 {
+	.pphttpAudioLive {
+	
+		height: 4em;
+	
+		div.ppdisplay {
+			width: 7.11em;
+			img {
+				width: 100%;
+		  		position: static !important;
+			}
+		}
+		.ppcontrols {
+		  left: 0;
+		  right: 0;
+		  margin-left: 7.11em;
+		  position: relative;
+		  width: initial !important;
+		}
+	}
+}
+
+.pphttpAudioLive.notransitions .ppcontrols.inactive,
+.pphttpAudioLive .ppcontrols.inactive {
+ 	bottom: 0px;
+ 	display: block; }
+  
+.pphttpAudioLive.notransitions .ppcontrols,
+.pphttpAudioLive .ppcontrols {
+	background-color: none;
+  	top: 0.5em;
+  	height: 2.6em;
+  	width: 100%;
+  	display: block; }  
+  
+.pphttpAudioLive .ppscrubber {
+ 	background-color: #1D5596;
+  	height: 0.5em;
+}
+
+.pphttpAudioLive .ppscrubber:hover {
+ 	height: 0.5em;
+}
+  
+.pphttpAudioLive .pptimeleft {
+ 	color: #FFFFFF;
+    line-height: 3.5em; 
+    }
+
+.pphttpAudioLive .ppbuffering {
+ 	left: 12%;
+}
+
+.pphttpAudioLive .ppvolumePanel.inactive {
+ 	display: block;
+}
+
+.pphttpAudioLive .ppvslider {
+	left: 0.6em;
+    position: relative;
+    top: 0.7em;    
+    height: 0.3em;
+    width: 70px;
+    margin: 0px 15px 0 -15px;
+}
+
+.pphttpAudioLive .ppvmarker {
+    position: relative;
+    right:0;
+    left: 0;
+    height:100%;
+    width: 100%;
+}
+
+.pphttpAudioLive .ppvknob  {
+    cursor: pointer;
+    z-index: 201;
+    position: relative;
+    top: -0.3em;
+    left:0;
+    width: 0.3em;
+    height: 0.6em;
+    padding: 0;
+    margin-left: -0.1em;
+
+}
+
+.pphttpAudioLive .ppplay,
+.pphttpAudioLive .pppause {
+	margin: 0.1em; }
+
+.pphttpAudioLive .ppcontrols ul.right {
+	right: 1em; }
+
+.pphttpAudioLive .pptimeleft {
+	display: none; 
+}
+  
+  
+/***************************************
+timeshift
+***************************************/
+.pphttpVideoLive .pptimeleft,
+.pphttpAudioLive .pptimeleft {
+	display: none; 
+}
+  
+
+.pphttpVideoLive.ppsemivod .pptimeleft {
+  display: block; }  
+ 
+.pphttpVideoLive.ppsemivodlive .pptimeleft {
+  display: none; }   
+  
+.ppgolive {
+ 	display: none; 
+}
+
+.ppdvr .ppgolive.off {
+  background-color: transparent;
+  color: #b6cff8;;;
+  cursor: pointer; 
+}
+
+.ppdvr .ppgolive.on {
+	cursor: default;
+        background-color: transparent;
+        color: #fdfdfd;
+        cursor: pointer; 
+}
+
+.ppsemivodlive .ppgolive {
+	display: none;
+}
+
+.ppdvr.ppsemivodlive .ppgolive.on {
+	display: none;
+}
+
+.ppdvr.ppsemivodlive .ppgolive.off {
+	display: none;
+}
+
+
+.unit_tip {
+	display: none; 
+}
+
+.ppdvr .unit_tip,
+.ppsemivod .unit_tip  {
+ 	display: inline; 
+}
+  
+  
+/***************************************
+WesterFlow Hacks
+***************************************/
+.bgelement .projekktor,
+.bgelement .projekktor.fullscreen,
+.bgelement .projekktor.fullviewport {
+	background-color: transparent;
+	z-index: auto;
+}
+
+.bgelement video {
+	min-width: 100%;
+	min-height: 100%;
+	height: auto;
+	object-fit: cover;
+}
+
+
+.bgelement .projekktor .ppcontrols {
+	z-index: 10;
+	background-color: transparent;
+}
+
+
+.bgelement .ppcontrols .ppplay, .bgelement .ppcontrols .pppause {
+  text-align: center;
+  background-color: #111;
+}
+
+.bgelement .ppcontrols .pptimeleft {
+	display: none;
+}
+
+.bgelement .ppcontrols .ppsettingsbtn,
+.bgelement .ppcontrols .ppvolumePanel
+{
+	display: none;
+}
+
+.bgelement .ppcontrols .ppmute,
+.bgelement .ppcontrols .ppunmute {
+	color: #fdfdfd;
+  	text-align: center;
+  	font-size: 1.2em;
+
+}
+
+.bgelement .ppcontrols .ppscrubber {
+  	z-index: 10;
+}
+
+
+.bgelement .ppcontrols .ppmute:hover,
+.bgelement .ppcontrols .ppunmute:hover {
+color: #fff;
+background-color: transparent;
+}
+
+.bgelement .ppcontrols.active,
+.bgelement .ppcontrols.inactive {
+	bottom: 0;
+ 	-webkit-transition: none;
+	-moz-transition: none;
+ 	-o-transition: none;
+ 	transition: none; 
+ }
+ 
+ 
+.bgelement .ppscrubber {
+	bottom: 0;
+}
+
+.bgelement .ppcontrols ul.right,
+.bgelement .pphttpAudio .ppcontrols {
+	bottom: 0.1em;
+	top: auto;
+} 
+
+.bgelement .ppcontrols ul.left { 
+	bottom: 0.5em;     
+}
+
+.bgelement .ppscrubbertip { 
+  bottom: 1.6em;
+  background-color: #111;
+}
+
+.bgelement .pphttpAudio .ppdisplay {
+	width: 100%;
+} 
+  
+.bgelement .pphttpAudio .ppcontrols,
+.bgelement .pphttpAudio .ppcontrols {
+	bottom: 0;
+	top: auto;
+	width: 100%;
+	margin: 0;
+} 
+
+.bgelement .pphttpAudio.notransitions .ppcontrols,
+.bgelement .pphttpAudio .ppcontrols { 
+	bottom: 0em;     
+	height: auto;
+}
+
+.bgelement .pphttpAudio .ppvslider { 
+	display: none;   
+}
+
+.bgelement .pphttpAudio .ppscrubber {
+    background-color: #1d5596;
+    background-color: #1d5596;
+    background-color: rgba(29, 85, 150, 0.2);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#00000059,endColorstr=#00000059);
+}
+ 
+ 
+.ppbufferspinner {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 3em;
+	height: 3em;
+	margin-left: -1.5em;
+	margin-top: -1.5em;
+	border: 3px solid rgba(255,255,255,0.8);
+	border-bottom-color: transparent;
+	border-radius: 50%;
+	animation: spin 0.7s linear infinite;
+}
+
+.ppbufferspinner:before {
+	content: "";
+	position: absolute;
+	top: 3px;
+	left: 3px;
+	right: 3px;
+	bottom: 3px;
+	border: 3px solid rgba(255,255,255,0.8);
+	border-radius: 50%;
+	animation: backspin 0.5s linear infinite;
+	border-bottom-color: transparent;
+}
+
+@keyframes spin {
+    0%   {
+		-webkit-transform: rotate(0deg);  /* Chrome, Opera 15+, Safari 3.1+ */
+		-ms-transform: rotate(0deg);  /* IE 9 */
+		transform: rotate(0deg);  /* Firefox 16+, IE 10+, Opera */
+}
+100% {
+		-webkit-transform: rotate(360deg);  /* Chrome, Opera 15+, Safari 3.1+ */
+		-ms-transform: rotate(360deg);  /* IE 9 */
+		transform: rotate(360deg);  /* Firefox 16+, IE 10+, Opera */
+    }
+}
+
+@keyframes backspin {
+    0%   {
+        -webkit-transform: rotate(360deg);  /* Chrome, Opera 15+, Safari 3.1+ */
+		-ms-transform: rotate(360deg);  /* IE 9 */
+		transform: rotate(360deg);  /* Firefox 16+, IE 10+, Opera */
+}
+100% {
+    	-webkit-transform: rotate(0deg);  /* Chrome, Opera 15+, Safari 3.1+ */
+		-ms-transform: rotate(0deg);  /* IE 9 */
+		transform: rotate(0deg);  /* Firefox 16+, IE 10+, Opera */
+    }
+} 

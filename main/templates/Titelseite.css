@@ -1,0 +1,116 @@
+
+body{
+	
+}
+
+.Hintergrund{
+	width:50%;
+	margin:auto;
+	height:1080px;
+	background:lightgray;
+
+}
+
+section.Artikel{
+	margin:auto;
+	width:95%;
+}
+
+.Artikel article{
+	margin:6% 2.5% 10% 3%;
+	float:left;
+	background-color:#fff;
+	width:90px;
+	height:90px;
+}
+.Artikel article:hover{
+	background-color:rgba(255, 255, 255, .2);
+}
+section.create{
+	margin:auto;
+	width:95%;
+}
+section.create textarea{
+	height:150px;
+	width:100%;
+}
+input.text{
+	background: #fff url(http://image.flaticon.com/icons/svg/118/118779.svg) no-repeat;
+	background-size:cover;
+	width:150px;
+	height:150px;
+
+}
+input.text:hover{opacity:0.5;
+
+}
+input.audio{
+	background: #fff url(http://image.flaticon.com/icons/svg/109/109512.svg) no-repeat;
+	background-size:cover;
+	width:150px;
+	height:150px;
+
+}
+input.audio:hover{opacity:0.5;
+
+}
+input.video{
+	background: #fff url(http://image.flaticon.com/icons/svg/149/149647.svg) no-repeat;
+	background-size:cover;
+	width:150px;
+	height:150px;
+
+}
+input.video:hover{opacity:0.5;
+
+}
+
+article.Article_1{
+	height:100px;
+	background-color:#aaa;
+}
+article.Article_2{
+	height:100px;
+	background-color:#aaa;
+}
+article.Article_3{
+	height:100px;
+	background-color:#aaa;
+}
+article.Article_4{
+	height:100px;
+	background-color:#aaa;
+}
+
+
+/*options css*/
+
+#logout{
+	float:right;
+	margin: 3%;
+}
+
+.pb{
+	width:50%;
+	height:10%;
+}
+.pb img{
+	float:left;
+	}
+.pb img.unicorn{
+	margin-right:1%;
+	
+	}
+	
+.pb img.sun{
+	margin-right:1%;
+	
+	}
+.pb h3{
+}
+
+.ncArticleDiv{
+	float: left;
+}
+
+

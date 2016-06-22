@@ -1,0 +1,17 @@
+.nCIcon{
+    font-size: 35px;
+    color: blue;
+    border: solid black;
+    border-radius: 10px;
+    border-color: blue;
+   padding: 10px;
+}
+
+.nsRatingStars{
+    font-size: 25px;
+    color: blue;
+}
+
+.ncArticleDiv{
+    float: left;
+}

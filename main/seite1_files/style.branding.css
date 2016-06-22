@@ -1,0 +1,78 @@
+.pphttpAudioLive .playerbranding {
+		position: absolute;
+		right: 2em;
+		bottom: 2em;
+		width: 200px;
+		height: 50px;
+		background: transparent url(/resources/images/logos/markenlogo_im_player.png) top left no-repeat; 
+		&.ndrde 				{ background-position: 100% 25px;  }
+		&.ndr1niedersachsen 	{ background-position: 100% -25px;  }
+		&.ndr1radiomv 			{ background-position: 100% -85px;  }
+		&.ndr1wellenord 		{ background-position: 100% -145px;  }
+		&.ndr903 				{ background-position: 100% -205px;  }
+		&.ndr2 					{ background-position: 100% -265px;  }
+		&.ndrkultur 			{ background-position: 100% -325px;  }
+		&.ndrinfo 				{ background-position: 100% -385px;  }
+		&.ndrinfospezial 		{ background-position: 100% -445px;  }
+		&.njoy 					{ background-position: 100% -505px;  }
+		&.ndrblue 				{ background-position: 100% -565px;  }
+	}
+  
+ .pphttpAudio .playerbranding {
+		position: absolute;
+		right: 2em;
+		bottom: 2em;
+		width: 200px;
+		height: 50px;
+		background: transparent url(/resources/images/logos/markenlogo_im_player.png) top left no-repeat; 
+		&.ndrde 				{ background-position: 100% 25px;  }
+		&.ndr1niedersachsen 	{ background-position: 100% -25px;  }
+		&.ndr1radiomv 			{ background-position: 100% -85px;  }
+		&.ndr1wellenord 		{ background-position: 100% -145px;  }
+		&.ndr903 				{ background-position: 100% -205px;  }
+		&.ndr2 					{ background-position: 100% -265px;  }
+		&.ndrkultur 			{ background-position: 100% -325px;  }
+		&.ndrinfo 				{ background-position: 100% -385px;  }
+		&.ndrinfospezial 		{ background-position: 100% -445px;  }
+		&.njoy 					{ background-position: 100% -505px;  }
+		&.ndrblue 				{ background-position: 100% -565px;  }
+	}
+  
+  
+/*.projekktor.fullviewport { position: relative; }*/
+.embedded.subnavbar { 
+	background: #0c1754; /* Old browsers */
+	background: -moz-linear-gradient(top, #0c1754 0%, #0c1754 71%, #2568b4 72%, #2568b4 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#0c1754), color-stop(71%,#0c1754), color-stop(72%,#2568b4), color-stop(100%,#2568b4)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #0c1754 0%,#0c1754 71%,#2568b4 72%,#2568b4 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #0c1754 0%,#0c1754 71%,#2568b4 72%,#2568b4 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #0c1754 0%,#0c1754 71%,#2568b4 72%,#2568b4 100%); /* IE10+ */
+	background: linear-gradient(to bottom, #0c1754 0%,#0c1754 71%,#2568b4 72%,#2568b4 100%); /* W3C */
+	bottom:0; 
+	width: 100%; 
+	height: 60px; 
+	position: absolute; 
+	z-index: 99999; 
+}
+.branding #brandinglogo.embedded { height: 60px; bottom: initial; right: 0;}
+.branding #brandinglogo.embedded img { height:60px; width: auto; margin-top: 0 !important;}
+
+.embedded.branding .horizon {  height: 18px; width: 100%; position: absolute; bottom: 0; background-color: rgb(37,104,180); }
+
+.ppExternal {
+	overflow:hidden;width:100%;height:100%;position:absolute;
+	.projekktor {
+		position:relative;
+	}
+}
+
+.projekktor.fullviewport.branded {
+	height: 100%;
+	height: -webkit-calc(100% - 60px);
+	height: -moz-calc(100% - 60px);
+	height: calc(100% - 60px);
+}
+	
+.module.halb .playerbranding {
+display: none; }
+	
