@@ -64,6 +64,10 @@
     <link type="text/css" rel="stylesheet"
           href="./VW-Hauptversammlung_ Demut und Reformwille _ NDR.de - Nachrichten - Niedersachsen - Braunschweig_Harz_Göttingen_files/print.css"
           media="print">
+
+    <!-- css für Menu -->
+    <link type="text/css" rel="stylesheet" href="../templates/mainht.css">
+
     <script type="text/javascript"
             src="./VW-Hauptversammlung_ Demut und Reformwille _ NDR.de - Nachrichten - Niedersachsen - Braunschweig_Harz_Göttingen_files/ndrde_base.js"></script>
     <script type="text/javascript"
@@ -599,29 +603,47 @@ c0.18-0.121,0.387-0.184,0.621-0.19c0.729-0.006,1.097,0.407,1.103,1.24v4.009H86.0
             <p>Am Ende seiner Rede sagte Müller, er wolle nicht um Vertrauen bitten, weil sich Volkswagen das erst
                 wieder verdienen müsse. "Daran arbeiten wir. Mit großer Ernsthaftigkeit und mit ganzem Einsatz."
                 Deshalb bitte er die Aktionäre, dem Konzern die Treue zu halten.</p>
-            <div id="studentContent" class="ncDiv">
-                <div > Schüleransicht
-                    <div class="onoffswitch" style="float: right" >
-                        <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch"
-                               onclick="toogleNewscraftItems()"
-                               checked="false">
-                        <label class="onoffswitch-label" for="myonoffswitch">
-                            <span class="onoffswitch-inner"></span>
-                            <span class="onoffswitch-switch"></span>
-                        </label>
-                    </div>
+
+            <!-- Basti pupilView -->
+            <div class="pupilView">
+
+
+                <div id="studentContent" class="ncDiv">
+                     <div class="pupilViewHeadLineDiv"> <p class="pupilViewP">Schüleransicht:</p>
+                     </div>
+
+                     <div class="onoffswitch">
+                          <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch"
+                                 onclick="toogleNewscraftItems()"
+                                 checked="false">
+                          <label class="onoffswitch-label" for="myonoffswitch">
+                              <span class="onoffswitch-inner"></span>
+                              <span class="onoffswitch-switch"></span>
+                          </label>
+                     </div>
+
                 </div>
-                <div id="newsCraftItems">
-                   <a href="../templates/meinNewscraft.html"> <i class="fa fa-thumb-tack nCIcon" aria-hidden="true"></i></a>
-                    <div>
-                        <i class="fa fa-star-o nsRatingStars" aria-hidden="true"></i>
-                        <i class="fa fa-star-o nsRatingStars"  aria-hidden="true"></i>
-                        <i class="fa fa-star-o nsRatingStars" aria-hidden="true"></i>
-                        <i class="fa fa-star-o nsRatingStars" aria-hidden="true"></i>
-                        <i class="fa fa-star-o nsRatingStars" aria-hidden="true"></i>
-                    </div>
-                </div>
+
+
+                 <div id="pupilViewTwo" class="pupilViewTwo">
+
+                     <div class="stars">
+                         <i class="fa fa-star-o nsRatingStars" aria-hidden="true"></i>
+                         <i class="fa fa-star-o nsRatingStars"  aria-hidden="true"></i>
+                         <i class="fa fa-star-o nsRatingStars" aria-hidden="true"></i>
+                         <i class="fa fa-star-o nsRatingStars" aria-hidden="true"></i>
+                         <i class="fa fa-star-o nsRatingStars" aria-hidden="true"></i>
+                     </div>
+
+                     <div id="newsCraftItems">
+                          <a href="../../main/templates/meinNewscraft.html"> <i class="fa fa-thumb-tack nCIcon" aria-hidden="true"></i></a>
+                          <a href="../../main/templates/klasenzimmer.html"> <i class="fa fa-eye nCIcon" aria-hidden="true"></i></a>
+                     </div>
+
+                 </div>
+
             </div>
+
 
             <div class="contentbox list voll">
                 <div class="boxhead">Weitere Informationen</div>

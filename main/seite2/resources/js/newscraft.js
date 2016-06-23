@@ -1,10 +1,10 @@
 
 function toogleNewscraftItems() {
-    var newsCraftItems =  jQuery('#newsCraftItems');
+    var newsCraftItems =  jQuery('#pupilViewTwo');
     if (newsCraftItems.hasClass('hide')){
         newsCraftItems.removeClass('hide')
     } else {
-        hideTextEditor()
+        newsCraftItems.addClass('hide');
     }
 }
 

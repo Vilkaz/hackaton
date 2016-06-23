@@ -1,13 +1,54 @@
-
-body{
-	
-}
+body{}
 
 .Hintergrund{
 	width:50%;
 	margin:auto;
 	/*height:1080px;*/
-	background:lightgray;
+	background:lightgrey;
+}
+
+
+img.Nadine{
+	margin:0% 2% 2% 2%;
+	float:left;
+	border-radius:50%;
+
+}
+
+img.text{
+	margin-left:5%;
+	background-color:rgba(255,200,0,1);
+	border-radius:50%;
+
+
+}
+img.video{
+	margin-left:2.5%;
+	background-color:rgba(255,255,0,1);
+	border-radius:50%;
+}
+img.audio{
+	margin-left:2.5%;
+	background-color:rgba(255,255,0,1);
+	border-radius:50%;
+
+}
+img.reax{
+	margin-left:2.5%;
+	background-color:rgba(100, 100, 255,1);
+	border-radius:50%;
+}
+ul li{
+	float:left;
+	font-size:3vh;
+	list-style:none;
+
+
+}
+
+
+hr{
+	clear:both;
 
 }
 
@@ -19,13 +60,10 @@ section.Artikel{
 .Artikel article{
 	margin:6% 2.5% 10% 3%;
 	float:left;
-	background-color:#fff;
 	width:90px;
 	height:90px;
 }
-.Artikel article:hover{
-	background-color:rgba(255, 255, 255, .2);
-}
+
 section.create{
 	margin:auto;
 	width:95%;
@@ -35,7 +73,9 @@ section.create textarea{
 	width:100%;
 }
 input.text{
-	background: #fff url(http://image.flaticon.com/icons/svg/118/118779.svg) no-repeat;
+	background-color:#fff;
+	background-image:url(http://image.flaticon.com/icons/svg/118/118779.svg);
+	background-repeat:no-repeat;
 	background-size:cover;
 	width:150px;
 	height:150px;
@@ -45,7 +85,9 @@ input.text:hover{opacity:0.5;
 
 }
 input.audio{
-	background: #fff url(http://image.flaticon.com/icons/svg/109/109512.svg) no-repeat;
+	background-color:#fff;
+	background-image:url(http://image.flaticon.com/icons/svg/109/109512.svg);
+	background-repeat:no-repeat;
 	background-size:cover;
 	width:150px;
 	height:150px;
@@ -55,7 +97,9 @@ input.audio:hover{opacity:0.5;
 
 }
 input.video{
-	background: #fff url(http://image.flaticon.com/icons/svg/149/149647.svg) no-repeat;
+	background-color:#fff;
+	background-image:url(http://image.flaticon.com/icons/svg/149/149647.svg);
+	background-repeat:no-repeat;
 	background-size:cover;
 	width:150px;
 	height:150px;
@@ -85,32 +129,42 @@ article.Article_4{
 
 /*options css*/
 
-#logout{
+a{
+	opacity:0.5;
 	float:right;
 	margin: 3%;
+	transition:1s;
 }
 
+a:hover{
+	opacity:1;
+}
 .pb{
 	width:50%;
 	height:10%;
 }
 .pb img{
 	float:left;
-	}
+}
 .pb img.unicorn{
 	margin-right:1%;
-	
-	}
-	
+
+}
+
 .pb img.sun{
 	margin-right:1%;
-	
-	}
+
+}
 .pb h3{
 }
 
-.ncArticleDiv{
-	float: left;
+/*anmeldeseite*/
+h2{
+	color:white;
+	margin-left:1%;
 }
+form{
+	font-size:3vh;
+	margin-left:1%;
 
-
+}
